@@ -1,0 +1,7 @@
+Dataset,Model,ROC-AUC unseen (Paper),ROC-AUC unseen (Ours),ROC-AUC seen (Paper),ROC-AUC seen (Ours),ROC-AUC mean (Paper),ROC-AUC mean (Ours),PR-AUC unseen (Paper),PR-AUC unseen (Ours),PR-AUC seen (Paper),PR-AUC seen (Ours),PR-AUC mean (Paper),PR-AUC mean (Ours)
+CU-Bird200-2011,fc,0.82,0.712,0.974,0.981,0.943,0.927,0.11,0.066,0.33,0.492,0.286,0.407
+CU-Bird200-2011,conv,0.80,0.702,0.96,0.917,0.925,0.874,0.085,0.074,0.15,0.116,0.14,0.107
+CU-Bird200-2011,fc+conv,0.85,0.680,0.98,0.983,0.953,0.923,0.13,0.064,0.37,0.554,0.31,0.456
+Oxford Flower,fc,0.70,0.589,0.987,0.953,0.90,0.881,0.07,0.135,0.65,0.402,0.52,0.349
+Oxford Flower,conv,0.65,0.581,0.97,0.841,0.85,0.790,0.054,0.088,0.61,0.116,0.46,0.111
+Oxford Flower,fc+conv,0.71,0.588,0.989,0.953,0.93,0.881,0.067,0.095,0.69,0.395,0.56,0.336

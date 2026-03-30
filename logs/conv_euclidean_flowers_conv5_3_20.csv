@@ -1,0 +1,1 @@
+epoch,loss,seen_top1,seen_top5,unseen_top1,unseen_top5,learning_rate,model_type,dataset

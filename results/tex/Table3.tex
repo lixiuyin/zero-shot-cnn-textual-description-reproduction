@@ -1,0 +1,16 @@
+
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Performance comparison using different intermediate ConvLayers (fc+conv models). Paper values from CUB-200-2010; Ours from CUB-200-2011.}
+\label{tab:table3}
+\begin{tabular}{lrrrrrr}
+\toprule
+Metrics & Conv5\_3 (Paper) & Conv5\_3 (Ours) & Conv4\_3 (Paper) & Conv4\_3 (Ours) & Pool5 (Paper) & Pool5 (Ours) \\ \midrule
+mean ROC-AUC & 0.91 & 0.923 & 0.6 & 0.916 & 0.82 & 0.926 \\
+mean PR-AUC & 0.28 & 0.456 & 0.09 & 0.449 & 0.173 & 0.465 \\
+mean top-5 acc. & 0.25 & 0.788 & 0.153 & 0.760 & 0.02 & 0.774 \\
+ \bottomrule
+\end{tabular}
+\end{table}
+

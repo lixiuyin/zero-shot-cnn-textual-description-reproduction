@@ -1,0 +1,101 @@
+\documentclass{article}
+
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage{siunitx}
+\usepackage{threeparttable}
+\usepackage[dvipsnames]{xcolor}
+
+\sisetup{
+  detect-weight=true,
+  detect-inline-weight=math,
+  group-digits=false,
+  input-symbols = {—},
+  table-format=1.3,
+}
+
+\begin{document}
+
+% ===================== Table: Loss =====================
+\setcounter{table}{4}
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{threeparttable}
+\caption{\makebox{Ablation~of~loss~functions~on~CUB-200-2011~(fc+conv)}}
+\label{tab:innov_loss}
+\begin{tabular}{l c c c c}
+\toprule
+ & \multicolumn{2}{c}{Seen} & \multicolumn{2}{c}{Unseen} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+Loss & {PR-AUC} & {ROC-AUC} & {PR-AUC} & {ROC-AUC} \\
+\midrule
+$L_{\text{CLIP}}$ & \bfseries 0.557 \textcolor{ForestGreen}{\textbf{↑}} & \bfseries 0.983 \textcolor{gray}{\textbf{→}} & \bfseries 0.072 \textcolor{ForestGreen}{\textbf{↑}} & 0.692 \textcolor{ForestGreen}{\textbf{↑}} \\
+$L_{\text{Center}}$ & 0.517 \textcolor{BrickRed}{\textbf{↓}} & 0.982 \textcolor{BrickRed}{\textbf{↓}} & 0.069 \textcolor{ForestGreen}{\textbf{↑}} & \bfseries 0.703 \textcolor{ForestGreen}{\textbf{↑}} \\
+$L_{\text{EmbMSE}}$ & 0.167 \textcolor{BrickRed}{\textbf{↓}} & 0.937 \textcolor{BrickRed}{\textbf{↓}} & 0.067 \textcolor{ForestGreen}{\textbf{↑}} & 0.699 \textcolor{ForestGreen}{\textbf{↑}} \\
+\midrule
+$L_{\text{BCE}}$ (baseline) & 0.554 & 0.983 & 0.064 & 0.680 \\
+\bottomrule
+\end{tabular}
+\end{threeparttable}
+\end{table}
+
+% ===================== Table: Text Encoder =====================
+\setcounter{table}{5}
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{threeparttable}
+\caption{\makebox{Ablation~of~text~encoders~on~CUB-200-2011~(fc+conv, TF-IDF)}}
+\label{tab:innov_text}
+\begin{tabular}{l c c c c}
+\toprule
+ & \multicolumn{2}{c}{Seen} & \multicolumn{2}{c}{Unseen} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+Text encoder & {PR-AUC} & {ROC-AUC} & {PR-AUC} & {ROC-AUC} \\
+\midrule
+SBERT & \bfseries 0.518 \textcolor{BrickRed}{\textbf{↓}} & 0.979 \textcolor{BrickRed}{\textbf{↓}} & 0.153 \textcolor{ForestGreen}{\textbf{↑}} & 0.821 \textcolor{ForestGreen}{\textbf{↑}} \\
+SBERT-multi-granularity & 0.473 \textcolor{BrickRed}{\textbf{↓}} & 0.976 \textcolor{BrickRed}{\textbf{↓}} & 0.126 \textcolor{ForestGreen}{\textbf{↑}} & 0.799 \textcolor{ForestGreen}{\textbf{↑}} \\
+CLIP-text & 0.514 \textcolor{BrickRed}{\textbf{↓}} & \bfseries 0.983 \textcolor{gray}{\textbf{→}} & \bfseries 0.283 \textcolor{ForestGreen}{\textbf{↑}} & 0.862 \textcolor{ForestGreen}{\textbf{↑}} \\
+CLIP-multi-granularity & 0.454 \textcolor{BrickRed}{\textbf{↓}} & 0.977 \textcolor{BrickRed}{\textbf{↓}} & 0.244 \textcolor{ForestGreen}{\textbf{↑}} & \bfseries 0.886 \textcolor{ForestGreen}{\textbf{↑}} \\
+\midrule
+TF-IDF (baseline) & 0.554 & 0.983 & 0.064 & 0.680 \\
+\bottomrule
+\end{tabular}
+\end{threeparttable}
+\end{table}
+
+% ===================== Table: Backbone =====================
+\setcounter{table}{6}
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{threeparttable}
+\caption{\makebox{Ablation~of~image~backbones~on~CUB-200-2011~(fc+conv, VGG-19)}}
+\label{tab:innov_backbone}
+\begin{tabular}{l c c c c}
+\toprule
+ & \multicolumn{2}{c}{Seen} & \multicolumn{2}{c}{Unseen} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+Backbone & {PR-AUC} & {ROC-AUC} & {PR-AUC} & {ROC-AUC} \\
+\midrule
+DenseNet-121 (fc+conv, default head) & \bfseries 0.584 \textcolor{ForestGreen}{\textbf{↑}} & \bfseries 0.986 \textcolor{ForestGreen}{\textbf{↑}} & \bfseries 0.094 \textcolor{ForestGreen}{\textbf{↑}} & \bfseries 0.771 \textcolor{ForestGreen}{\textbf{↑}} \\
+ResNet-50 (fc+conv, default head) & 0.517 \textcolor{BrickRed}{\textbf{↓}} & 0.981 \textcolor{BrickRed}{\textbf{↓}} & 0.069 \textcolor{ForestGreen}{\textbf{↑}} & 0.695 \textcolor{ForestGreen}{\textbf{↑}} \\
+DenseNet-121 (fc+conv, penultimate feat) & 0.513 \textcolor{BrickRed}{\textbf{↓}} & 0.983 \textcolor{gray}{\textbf{→}} & 0.083 \textcolor{ForestGreen}{\textbf{↑}} & 0.748 \textcolor{ForestGreen}{\textbf{↑}} \\
+ResNet-50 (fc+conv, penultimate feat) & 0.262 \textcolor{BrickRed}{\textbf{↓}} & 0.964 \textcolor{BrickRed}{\textbf{↓}} & 0.089 \textcolor{ForestGreen}{\textbf{↑}} & 0.740 \textcolor{ForestGreen}{\textbf{↑}} \\
+DenseNet-121 (fc-only, penultimate feat) & 0.551 \textcolor{BrickRed}{\textbf{↓}} & 0.985 \textcolor{ForestGreen}{\textbf{↑}} & 0.080 \textcolor{ForestGreen}{\textbf{↑}} & 0.744 \textcolor{ForestGreen}{\textbf{↑}} \\
+ResNet-50 (fc-only, penultimate feat) & 0.045 \textcolor{BrickRed}{\textbf{↓}} & 0.846 \textcolor{BrickRed}{\textbf{↓}} & 0.047 \textcolor{BrickRed}{\textbf{↓}} & 0.617 \textcolor{BrickRed}{\textbf{↓}} \\
+\midrule
+VGG-19 fc+conv (baseline) & 0.554 & 0.983 & 0.064 & 0.680 \\
+\bottomrule
+\end{tabular}
+\end{threeparttable}
+\end{table}
+
+\end{document}

@@ -1,0 +1,54 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Code Agents
+.claude
+.omc
+.ruff_cache
+
+# macOS
+*.DS_Store
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+wheels/
+
+# Virtual environments
+.venv/
+.env/
+venv/
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Logs / temporary
+*.log
+tmp/
+.pytest_cache/
+
+data/images/
+
+# Checkpoints
+checkpoints/
+
+# tex
+results/tex/*.log
+results/tex/*.aux
+results/*.log
+results/*.aux
+.swp
+.swo
+
+# Paper
+Paper/
