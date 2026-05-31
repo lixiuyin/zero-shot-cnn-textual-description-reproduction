@@ -1,7 +1,7 @@
 [project]
 name = "zero-shot-cnn"
 version = "0.1.0"
-description = "Reproduction of 'Predicting Deep Zero-Shot CNNs Using Textual Descriptions' (Ba et al., ICCV 2015)"
+description = "From-scratch PyTorch reproduction of Ba et al.'s ICCV 2015 zero-shot CNN approach using textual class descriptions"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [

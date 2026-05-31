@@ -1,5 +1,7 @@
 # Predicting Deep Zero-Shot CNNs from Text — Unofficial Reproduction
 
+A from-scratch PyTorch reproduction of Ba et al.'s ICCV 2015 zero-shot CNN approach, which predicts visual classifiers from textual class descriptions.
+
 > **NOTE:** This repository is implemented from scratch as a course project for CIML (Computational Intelligence and Machine Learning) since there is no official or public implementation of the paper available.
 
 ## Paper Details
