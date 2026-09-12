@@ -1,6 +1,6 @@
 # Reproduction Guide — Ba et al. ICCV 2015
 
-This guide provides detailed instructions for reproducing all paper experiments and generating comparison tables. For a high-level overview and quick start, see the [README](../README.md).
+This guide covers the repository's core-model reproductions, ablations and comparison tables. It does not reproduce every baseline or setting in the paper. For a high-level overview and quick start, see the [README](../README.md).
 
 ## Paper Experiments Overview
 
@@ -13,7 +13,7 @@ This guide provides detailed instructions for reproducing all paper experiments 
 | Figure 2 | Sec 5.8 | **CUB-2010** | CUB-2011 | fc | word sensitivity + NN retrieval |
 | Figure 5 | Appendix | CUB, Flowers | CUB-2011, Flowers | fc+conv (conv) | conv filter visualization |
 
-> **Bold** = our dataset differs from the paper's. CUB-200-2010 (6,033 images) is no longer publicly available; we use CUB-200-2011 (11,788 images, same 200 bird classes).
+> **Bold** = our dataset differs from the paper's. This repository uses CUB-200-2011 (11,788 images) rather than CUB-200-2010 (6,033 images); results on these datasets are not exact like-for-like replications.
 
 **Data splits (Paper Sec 5.2, 5.3):**
 - CUB: 40 unseen / 160 seen classes; seen classes use 80% train / 20% test; 5-fold cross-validation

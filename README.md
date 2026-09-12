@@ -20,7 +20,7 @@
 
 实现覆盖论文中的全连接层权重预测、卷积滤波器预测和 `fc+conv` 联合模型，并在 CUB-200-2011 与 Oxford Flowers 上复现与扩展实验。
 
-<table width="100%"><tr><td align="left"><a href="https://huggingface.co/LiXiuyin/zero-shot-cnn-comp7404-group17/tree/main"><img src="https://img.shields.io/badge/Hugging%20Face-Model-yellow?logo=huggingface" alt="Hugging Face"></a></td><td align="center"><a href="https://github.com/LiXiuyin/zero-shot-cnn-comp7404-group17"><img src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github" alt="GitHub"></a></td><td align="right"><a href="https://drive.google.com/file/d/1ki7MEb_LcPpqWF3HNN9S1UJ9hYzpr5mz/view"><img src="https://img.shields.io/badge/Google%20Drive-Images-red?logo=google-drive" alt="Google Drive"></a></td></tr></table>
+<table width="100%"><tr><td align="left"><a href="https://huggingface.co/LiXiuyin/zero-shot-cnn-comp7404-group17/tree/main"><img src="https://img.shields.io/badge/Hugging%20Face-Model-yellow?logo=huggingface" alt="Hugging Face"></a></td><td align="center"><a href="https://github.com/lixiuyin/zero-shot-cnn-textual-description-reproduction"><img src="https://img.shields.io/badge/GitHub-Repository-blue?logo=github" alt="GitHub"></a></td><td align="right"><a href="https://drive.google.com/file/d/1ki7MEb_LcPpqWF3HNN9S1UJ9hYzpr5mz/view"><img src="https://img.shields.io/badge/Google%20Drive-Images-red?logo=google-drive" alt="Google Drive"></a></td></tr></table>
 
 ## 环境安装
 

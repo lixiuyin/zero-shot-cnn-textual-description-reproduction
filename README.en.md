@@ -4,7 +4,7 @@
 
 A from-scratch PyTorch reproduction of Ba et al.'s ICCV 2015 zero-shot CNN approach, which predicts visual classifiers from textual class descriptions.
 
-> **NOTE:** This repository is implemented from scratch as a course project for CIML (Computational Intelligence and Machine Learning) since there is no official or public implementation of the paper available.
+> **NOTE:** This is an unofficial course reproduction for CIML (Computational Intelligence and Machine Learning), with core implementations, comparison experiments and documented extensions. It does not claim that no other implementation exists.
 
 ## Paper Details
 
@@ -13,7 +13,7 @@ A from-scratch PyTorch reproduction of Ba et al.'s ICCV 2015 zero-shot CNN appro
 - **Venue:** ICCV 2015
 - **Summary:** Uses textual descriptions (e.g. Wikipedia articles) to predict the weights of both convolutional and fully connected layers in a deep CNN for zero-shot visual classification, without hand-defined semantic attributes. The key idea is: given a text description $t_c$ for class $c$, a neural network $f_t(t_c)$ predicts classifier weights $w_c$, and the classification score is $\hat{y}_c = w_c^\top g_v(x)$ where $g_v$ maps images to a joint embedding space (Sec 3.2). This extends to predicting convolutional filters (Sec 3.3) and a joint fc+conv model (Sec 3.4).
 
-<table width="100%"><tr><td align="left"><a href="https://huggingface.co/LiXiuyin/zero-shot-cnn-comp7404-group17/tree/main"><img src="https://img.shields.io/badge/Hugging%20Face-Model-yellow?logo=huggingface" alt="Hugging Face"></a></td><td align="center"><a href="https://github.com/LiXiuyin/zero-shot-cnn-comp7404-group17"><img src="https://img.shields.io/badge/github-repo-blue?logo=github" alt="GitHub"></a></td><td align="right"><a href="https://drive.google.com/file/d/1ki7MEb_LcPpqWF3HNN9S1UJ9hYzpr5mz/view"><img src="https://img.shields.io/badge/Google%20Drive-Images-red?logo=google-drive" alt="Google Drive"></a></td></tr></table>
+<table width="100%"><tr><td align="left"><a href="https://huggingface.co/LiXiuyin/zero-shot-cnn-comp7404-group17/tree/main"><img src="https://img.shields.io/badge/Hugging%20Face-Model-yellow?logo=huggingface" alt="Hugging Face"></a></td><td align="center"><a href="https://github.com/lixiuyin/zero-shot-cnn-textual-description-reproduction"><img src="https://img.shields.io/badge/github-repo-blue?logo=github" alt="GitHub"></a></td><td align="right"><a href="https://drive.google.com/file/d/1ki7MEb_LcPpqWF3HNN9S1UJ9hYzpr5mz/view"><img src="https://img.shields.io/badge/Google%20Drive-Images-red?logo=google-drive" alt="Google Drive"></a></td></tr></table>
 
 ## Setup
 
@@ -253,7 +253,7 @@ Replace VGG-19 with modern CNN backbones. All backbones support both conv and fc
 | C5: DenseNet-121 | fc-only | penultimate | 0.551 | 0.985 | 0.080 | 0.744 |
 | C6: ResNet-50 | fc-only | penultimate | 0.045 | 0.846 | 0.047 | 0.617 |
 
-> For detailed specifications of text encoder pooling mechanisms (exact split patterns, truncation lengths) and image backbone architectures (layer sources, spatial dimensions), see **[`docs/REPRODUCTION_GUIDE.md#extension-components`](docs/REPRODUCTION_GUIDE.md#extension-components)**.
+> For detailed specifications of text encoder pooling mechanisms (exact split patterns, truncation lengths) and image backbone architectures (layer sources, spatial dimensions), see **[`docs/REPRODUCTION_GUIDE.md#extension-components-beyond-paper`](docs/REPRODUCTION_GUIDE.md#extension-components-beyond-paper)**.
 
 ---
 
@@ -336,7 +336,7 @@ This demonstrates that the text-predicted convolutional filters learn class-spec
 
 ## Implementation Details
 
-This implementation strictly follows Ba et al. ICCV 2015:
+This implementation reproduces the core architectures of Ba et al. ICCV 2015. Dataset, feature-extraction and evaluation differences are documented in the [reproduction guide](docs/REPRODUCTION_GUIDE.md); this is not an exact replication of every paper setting:
 
 - **Architecture**: Three model types — fc (Sec 3.2), conv (Sec 3.3), and fc+conv (Sec 3.4)
 - **Text encoder ft(·)**: p → 300 → k with small initialization (std=0.01)
@@ -355,7 +355,7 @@ This implementation strictly follows Ba et al. ICCV 2015:
 
 **Image backbones**: DenseNet-121, ResNet-50 with support for both conv and fc branches. Two FC modes: `default` (through classifier) and `penultimate` (skip classifier).
 
-> For detailed specifications of extension components including exact pooling mechanisms and architecture diagrams, see **[`docs/REPRODUCTION_GUIDE.md#extension-components`](docs/REPRODUCTION_GUIDE.md#extension-components)**.
+> For detailed specifications of extension components including exact pooling mechanisms and architecture diagrams, see **[`docs/REPRODUCTION_GUIDE.md#extension-components-beyond-paper`](docs/REPRODUCTION_GUIDE.md#extension-components-beyond-paper)**.
 
 ---
 

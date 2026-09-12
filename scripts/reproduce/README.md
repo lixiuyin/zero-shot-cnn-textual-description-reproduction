@@ -1,6 +1,6 @@
 # Reproduction scripts (Ba et al. ICCV 2015)
 
-One script per table or figure. Run from the **`Code`** directory.
+One script per table or figure. Run from the **repository root**, where `scripts/` and `models/` are located.
 
 **Note:** Train models first using `scripts/train.py` before running reproduction scripts.
 
@@ -141,4 +141,4 @@ Tables organize results with **Paper and Ours data side-by-side** for easy compa
 - **Table 4**: 4 columns - Each dataset (CUB, Oxford Flowers) has Paper and Ours columns
 - **Figure 2**: Left = word sensitivities (fc, CUB200-2010), right = nearest-neighbor table
 
-All numbers are produced by **evaluating the loaded checkpoints** (no hardcoded values).
+The **Ours** columns are computed by evaluating loaded checkpoints. The **Paper** columns contain fixed reference values transcribed from the paper; they are comparison targets, not results computed by this repository.
